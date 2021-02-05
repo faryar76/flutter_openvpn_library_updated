@@ -191,7 +191,7 @@ public class OboloiVPN extends Activity {
         if(byteIn == null) byteIn = "";
 
         if(byteOut == null) byteOut = "";
-
+        Log.v("own","onConnectionStatusChanged");
         if(OboloiVPN.listener != null) OboloiVPN.listener.onConnectionStatusChanged(duration , lastPacketReceive, byteIn , byteOut);
         //binding.durationTv.setText("Duration: " + duration);
         //binding.lastPacketReceiveTv.setText("Packet Received: " + lastPacketReceive + " second ago");
