@@ -70,14 +70,14 @@ public class OboloiVPN extends Activity {
             activity.startActivityForResult(OboloiVPN.profileIntent, 1);
             return;
         }
-        if(listener != null) listener.onProfileLoaded(true);
+        if(OboloiVPN.listener != null) OboloiVPN.listener.onProfileLoaded(true);
     }
 
     public void onPermissionChanged(boolean permitted) {
         if (permitted) {
-            if(listener != null) listener.onProfileLoaded(true);
+            if(OboloiVPN.listener != null) OboloiVPN.listener.onProfileLoaded(true);
         }else {
-            if(listener != null) listener.onProfileLoaded(false);
+            if(OboloiVPN.listener != null) OboloiVPN.listener.onProfileLoaded(false);
         }
     }
 
@@ -177,7 +177,7 @@ public class OboloiVPN extends Activity {
 
                     break;
             }
-            if (listener != null) listener.onVPNStatusChanged(connectionState);
+            if (OboloiVPN.listener != null) OboloiVPN.listener.onVPNStatusChanged(connectionState);
         }else{
 
         }
@@ -192,7 +192,7 @@ public class OboloiVPN extends Activity {
 
         if(byteOut == null) byteOut = "";
 
-        if(listener != null) listener.onConnectionStatusChanged(duration , lastPacketReceive, byteIn , byteOut);
+        if(OboloiVPN.listener != null) OboloiVPN.listener.onConnectionStatusChanged(duration , lastPacketReceive, byteIn , byteOut);
         //binding.durationTv.setText("Duration: " + duration);
         //binding.lastPacketReceiveTv.setText("Packet Received: " + lastPacketReceive + " second ago");
         //binding.byteInTv.setText("Bytes In: " + byteIn);
